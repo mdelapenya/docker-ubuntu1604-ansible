@@ -1,14 +1,21 @@
 FROM ubuntu:16.04
 LABEL maintainer="Jeff Geerling"
+LABEL maintainer="Manuel de la Peña"
+
+ENV TZ 'America/Los_Angeles'
 
 # Install dependencies.
-RUN apt-get update \
+RUN echo $TZ > /etc/timezone \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
        python-software-properties \
        software-properties-common \
-       rsyslog systemd systemd-cron sudo \
+       rsyslog systemd systemd-cron sudo tzdata \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
+    && rm /etc/localtime \
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata \
     && apt-get clean
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 #ADD etc/rsyslog.d/50-default.conf /etc/rsyslog.d/50-default.conf
