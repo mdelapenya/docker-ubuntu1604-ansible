@@ -1,6 +1,6 @@
 # Ubuntu 16.04 LTS (Xenial) Ansible Test Image
 
-[![Docker Automated build](https://img.shields.io/docker/automated/geerlingguy/docker-ubuntu1604-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/geerlingguy/docker-ubuntu1604-ansible/)
+[![Docker Automated build](https://img.shields.io/docker/automated/mdelapenya/docker-ubuntu1604-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/mdelapenya/docker-ubuntu1604-ansible/)
 
 Ubuntu 16.04 LTS (Xenial) Docker container for Ansible playbook and role testing.
 
@@ -30,3 +30,4 @@ I use Docker to test my Ansible roles and playbooks on multiple OSes using CI to
 ## Author
 
 Created in 2016 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+Modified in 2017 by [Manuel de la Peña](https://twitter.com/mdelapenya), Software Engineer at WeDeploy and Liferay Inc.
